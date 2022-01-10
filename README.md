@@ -1,2 +1,2 @@
 # Magelearn_ProductDeliveryDate
-Display Delivery either on product page or checkout cart page Magento2
+Display delivery date either on product detail page or checkout cart page in Magento2
