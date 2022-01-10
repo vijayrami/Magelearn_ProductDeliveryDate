@@ -1,0 +1,11 @@
+<div class="deliverydate-block fieldset"
+     data-bind="visible: config.order.enabled == '1'">
+    <!-- <span data-bind="html: config.order.dateformat"></span> -->
+    <div class="field _required">
+         <label class="label"  for="order-delivery-date"><span data-bind="i18n: 'Order Delivery Date'"></span></label>
+         <div class="control" >
+               <input class="input-text" data-bind="afterRender:afterRender" type="text" name="order-delivery-date" aria-required="true" aria-invalid="false" id="order-delivery-date">
+         </div>
+     </div>
+</div>
+ 

@@ -1,0 +1,11 @@
+<?php $order = $block->getOrder();
+$orderAdminDate = $block->formatDate(
+    $block->getOrderAdminDate($order->getMagelearnDeliveryDate()),
+    \IntlDateFormatter::MEDIUM
+);
+
+ ?>
+<tr>
+    <th><?= $block->escapeHtml(__('Order Delivery Date')) ?></th>
+    <td><span id="order_delivery_date"><?= $block->escapeHtml($orderAdminDate) ?></span></td>
+</tr>

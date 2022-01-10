@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+		<referenceBlock name="product.info.form.content">		
+            <block class="Magelearn\ProductDeliveryDate\Block\Deliverydate" before="-" name="deliverydate_simple" template="Magelearn_ProductDeliveryDate::deliverydate.phtml" />
+        </referenceBlock> 
+        <referenceBlock name="product.info.form.options">	
+            <block class="Magelearn\ProductDeliveryDate\Block\Deliverydate" before="-" name="deliverydate_config" template="Magelearn_ProductDeliveryDate::deliverydate.phtml" />
+        </referenceBlock> 
+    </body>
+</page>

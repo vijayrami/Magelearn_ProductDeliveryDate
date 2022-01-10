@@ -1,0 +1,60 @@
+<?php if ($block->canShow()) { ?>
+<div class="field delivery_date">
+    <label class="label" for="delivery_date"><span><?= __('Delivery Date') ?></span></label>
+    <div class="control">
+        <input name="delivery_date" <?= $block->getStoreConfig('deliverydate_options/activation/required') == 1 ? 'data-validate="{\'required\':true}"' : '' ?> id="datepicker" title="<?= __('Delivery Date') ?>" value="" type="text">
+    </div>
+</div>
+
+<script type="text/javascript">
+require([
+    "jquery",
+    "mage/calendar"
+    ], function($){
+      $('#datepicker').datepicker({
+          	minDate:'<?= $block->getStoreConfig('deliverydate_options/activation/mindate'); ?>',
+			maxDate:'<?= $block->getStoreConfig('deliverydate_options/activation/maxdate'); ?>',
+          	dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+          	dateFormat:'<?= $block->getStoreConfig('deliverydate_options/activation/dateformat'); ?>',
+          	beforeShowDay: nonWorkingDates
+        });
+      	if(nonWorkingDates(new Date())=='false')
+		{	
+			$("#datepicker").val('<?= __('Select Date') ?>');
+		}
+
+		function nonWorkingDates(date){
+			var date_obj = [];
+	        var day = date.getDay(), sunday = 0, monday = 1, tuesday = 2, wednesday = 3, thursday = 4, friday = 5, saturday = 6;
+	        let string = $.datepicker.formatDate('yy-mm-dd', date);
+	        
+	        var closedDays = [<?= $block->getStoreConfig('deliverydate_options/activation/daydisable'); ?>];
+	        var closedDates = '<?= $block->getStoreConfig('deliverydate_options/activation/datedisable'); ?>';
+    		var closedDates_obj = JSON.parse(closedDates);
+    		
+	        for (var i = 0; i < closedDays.length; i++) {
+	            if (day == eval(closedDays[i])) {
+	                return [false,'redday'];
+	            }
+	        }
+	 		
+	 		for (var key in closedDates_obj) {
+            	// skip loop if the property is from prototype
+            	if (!closedDates_obj.hasOwnProperty(key)) continue;
+        
+            	var obj = closedDates_obj[key];
+            	for (var prop in obj) {
+                	// skip loop if the property is from prototype
+                	if (!obj.hasOwnProperty(prop)) continue;
+        			
+        			if(prop == 'date' && obj[prop] === string) {
+        				return [false,'redblackday',obj['content']];
+        			}
+            	}
+        	}
+
+	        return [true];
+	    }
+    });
+</script>
+<?php } ?>

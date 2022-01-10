@@ -1,0 +1,23 @@
+{
+    "name": "magelearn/module-productdeliverydate",
+    "description": "Display delivery date either on product detail page or checkout cart page in Magento2",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Vijay Rami",
+            "email": "vijaymrami@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magelearn\\ProductDeliveryDate\\": ""
+        }
+    }
+}
