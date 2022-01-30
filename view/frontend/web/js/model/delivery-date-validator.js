@@ -12,16 +12,15 @@ define(
 				if (config().order.enabled == '0') {
 					return true;
 				}
-				let product_delivery_date = document.getElementById('order-delivery-date').value;
-				if (config().order.required == '0'
-					&& product_delivery_date == null
-					&& product_delivery_date.length === 0 ) {
+				var product_delivery_date = document.getElementById('order-delivery-date').value;
+				
+				if (config().order.required == '0' && (product_delivery_date == null
+					|| product_delivery_date.length === 0 || isEmpty(product_delivery_date))) {
 					return true;
 				}
                 let isValid = false;
                 var message;
-                //console.log(config().order);
-				//console.log('test');
+                
                 let url = urlBuilder.build('deliverydate/order/set');
                 $.ajax(
                     {
@@ -45,13 +44,9 @@ define(
                         }
                     }
                 );
-            
-                
                 if (!isValid) {
                     messageList.addErrorMessage({ message: message });
                 }
-                
-                
                 return isValid;
             }
         }
