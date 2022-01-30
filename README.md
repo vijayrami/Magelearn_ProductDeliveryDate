@@ -33,7 +33,8 @@ Display delivery date either on product detail page or checkout cart page in Mag
 
 [![invoice2022-01-30-05-03-34-pdf.png](https://i.postimg.cc/gkRPmRFg/invoice2022-01-30-05-03-34-pdf.png)](https://postimg.cc/1f9dK8zF)
 
-
+## Product Delivery Date at checkout
+[![Screenshot-from-2022-01-30-15-20-27.png](https://i.postimg.cc/bN1Pvjzc/Screenshot-from-2022-01-30-15-20-27.png)](https://postimg.cc/F7F8P8dD)
 
 
 # Referances
