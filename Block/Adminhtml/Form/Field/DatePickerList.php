@@ -60,7 +60,10 @@ class DatePickerList extends \Magento\Config\Block\System\Config\Form\Field\Fiel
                     jq(function(){
                         function bindDatePicker() {
                             setTimeout(function() {
-                                jq(".js-date-excluded-datepicker").datepicker( { dateFormat: "dd/mm/yy" } );
+                                jq(".js-date-excluded-datepicker").datepicker({
+                                    dateFormat: "dd/mm/yy",
+                                    minDate: 0
+                                });
                             }, 50);
                         }
                         bindDatePicker();
