@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magelearn" sortOrder="1">
+            <label>Magelearn Thread</label>
+        </tab>
+        <section id="deliverydate_options" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+            <tab>magelearn</tab>
+            <label>Product Delivery Date</label>
+            <resource>Magelearn_ProductDeliveryDate::deliverydate_options</resource> 
+            <group id="activation" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Manage Product Delivery Date</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Product Delivery Date Calendar</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                 </field>  
+                 <field id="required" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Make Calendar Field Required</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                 </field>  
+                 <field id="daydisable" translate="label" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Days To Disable</label>
+                    <comment>Enter Day's e.g. saturday,sunday,monday etc.</comment>
+                    <source_model>Magelearn\ProductDeliveryDate\Model\Config\Source\Disabled</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                 </field>
+                <field id="datedisable" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Dates To Disable</label>
+                    <comment></comment>
+                    <frontend_model>Magelearn\ProductDeliveryDate\Block\Adminhtml\Form\Field\DatePickerList</frontend_model>
+                    <backend_model>Magelearn\ProductDeliveryDate\Model\Config\Backend\DatePickerList</backend_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="mindate" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Minimum Date</label>
+                    <comment>set 0 for current date. e.g if this field is zero then customer will not be able to select date less than current date. If this field is -5 then customer will not able to select date less than (currentDate-5 days).</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>  
+                <field id="maxdate" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Maximum Date</label>
+                    <comment>If this field is set to 15 then customer will be able to select date not more than next 15 days</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field> 
+                <field id="dateformat" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Date Format</label>
+                    <comment>E.g. dd/mm/yy , Refer this &lt;a target="_blank" href="https://api.jqueryui.com/datepicker/#utility-formatDate"&gt;link&lt;/a&gt; for valid date formats</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="productwise" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Show Date Picker On Slected Products</label>
+                    <comment>If this field is set to yes then for showing date picker on product you need to select yes from product attribute "Show Date Picker"</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                 </field>   
+            </group>
+            <group id="order" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Manage Order Delivery Date</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                 </field>  
+                 <field id="required" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Make Calendar Field Required</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                 </field>  
+                 <field id="daydisable" translate="label" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Days To Disable</label>
+                    <comment>Enter Day's e.g. saturday,sunday,monday etc.</comment>
+                    <source_model>Magelearn\ProductDeliveryDate\Model\Config\Source\Disabled</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                 </field>
+                 <field id="datedisable" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dates To Disable</label>
+                    <comment></comment>
+                    <frontend_model>Magelearn\ProductDeliveryDate\Block\Adminhtml\Form\Field\DatePickerList</frontend_model>
+                    <backend_model>Magelearn\ProductDeliveryDate\Model\Config\Backend\DatePickerList</backend_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="mindate" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Minimum Date</label>
+                    <comment>set 0 for current date. e.g if this field is zero then customer will not be able to select date less than current date. If this field is -5 then customer will not able to select date less than (currentDate-5 days).</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>  
+                <field id="maxdate" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Maximum Date</label>
+                    <comment>If this field is set to 15 then customer will be able to select date not more than next 15 days</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field> 
+                <field id="dateformat" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Date Format</label>
+                    <comment>E.g. dd/mm/yy , Refer this &lt;a target="_blank" href="https://api.jqueryui.com/datepicker/#utility-formatDate"&gt;link&lt;/a&gt; for valid date formats</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
