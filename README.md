@@ -36,6 +36,8 @@ Display delivery date either on product detail page or checkout cart page in Mag
 ## Product Delivery Date at checkout
 [![Screenshot-from-2022-01-30-15-20-27.png](https://i.postimg.cc/bN1Pvjzc/Screenshot-from-2022-01-30-15-20-27.png)](https://postimg.cc/F7F8P8dD)
 
+[![Order-000000008.png](https://i.postimg.cc/437BJXgp/Order-000000008.png)](https://postimg.cc/wtzh283B)
+
 
 # Referances
 https://webkul.com/blog/additional-options-cart-item-magento2/
