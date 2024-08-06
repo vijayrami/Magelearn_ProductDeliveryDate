@@ -3,7 +3,7 @@ Display delivery date either on product detail page or checkout cart page in Mag
 
 # Screen Shots
 
-[!Configuration-Settings-Stores-Magento-Admin.png](/assets/config_1.png)
+[Configuration-Settings-Stores-Magento-Admin.png](/assets/config_1.png)
 
 [!Configuration-Settings-Stores-Magento-Admin-1.png](/assets/config_2.png)
 
